@@ -29,6 +29,20 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
+    const w = window.innerWidth;
+    if (w <= 768) {
+        if (currentScroll > 10) {
+            header.classList.add('header--compact');
+            const navEl = document.querySelector('.nav');
+            const toggleEl = document.querySelector('.nav-toggle');
+            if (navEl) { navEl.classList.remove('open'); }
+            if (toggleEl) { toggleEl.classList.remove('open'); }
+        } else {
+            header.classList.remove('header--compact');
+        }
+    } else {
+        header.classList.remove('header--compact');
+    }
 });
 
 // Intersection Observer for fade-in animations
@@ -70,6 +84,18 @@ if (document.readyState === 'loading') {
 } else {
     applyLinksAndAnimations();
 }
+
+function updateHeaderCompact() {
+    const w = window.innerWidth;
+    const sc = window.pageYOffset;
+    if (w <= 768 && sc > 10) {
+        header.classList.add('header--compact');
+    } else {
+        header.classList.remove('header--compact');
+    }
+}
+window.addEventListener('resize', updateHeaderCompact);
+window.addEventListener('load', updateHeaderCompact);
 
 // Mobile navigation toggle
 const navToggle = document.querySelector('.nav-toggle');
