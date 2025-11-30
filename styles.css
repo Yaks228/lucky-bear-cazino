@@ -697,7 +697,8 @@ section {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
+        gap: 8px;
+        flex-wrap: nowrap;
     }
 
     .nav-toggle {
@@ -724,7 +725,18 @@ section {
     .header.header--compact .nav,
     .header.header--compact .nav-toggle { display: none !important; }
     .header.header--compact .header-content { justify-content: center; }
-    .header.header--compact .btn-telegram { padding: 10px 18px; font-size: 0.95rem; border-radius: 20px; }
+    .header.header--compact .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; max-height: 40px; }
+
+    .telegram-bot { display: flex; align-items: center; }
+    .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; line-height: 1.2; white-space: nowrap; max-height: 40px; }
+
+    /* iOS safe area support for header container */
+    @supports (padding: env(safe-area-inset-top)) {
+        .header .container {
+            padding-left: calc(20px + env(safe-area-inset-left));
+            padding-right: calc(20px + env(safe-area-inset-right));
+        }
+    }
 
     .hero-title {
         font-size: 2rem;
@@ -763,6 +775,7 @@ section {
 }
 
 @media (max-width: 480px) {
+    .btn-telegram { padding: 9px 14px; font-size: 0.9rem; border-radius: 16px; }
     .hero {
         padding: 40px 0;
     }
