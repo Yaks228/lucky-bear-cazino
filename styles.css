@@ -6,17 +6,17 @@
 }
 
 :root {
-    --primary-color: #FF6B35;
-    --secondary-color: #F7931E;
-    --dark-bg: #1a1a2e;
-    --darker-bg: #0f0f1e;
+    --primary-color: #2D9CDB;
+    --secondary-color: #1B6FD1;
+    --dark-bg: #0d1533;
+    --darker-bg: #0a0f26;
     --text-light: #ffffff;
     --text-gray: #b8b8b8;
     --accent-gold: #FFD700;
-    --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-    --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+    --gradient-primary: linear-gradient(135deg, #2D9CDB 0%, #1B6FD1 100%);
+    --gradient-dark: linear-gradient(135deg, #0d1533 0%, #0a0f26 100%);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 15px 40px rgba(255, 107, 53, 0.4);
+    --shadow-hover: 0 15px 40px rgba(45, 156, 219, 0.4);
 }
 
 body {
@@ -143,7 +143,7 @@ body {
 .hero {
     padding: 80px 0;
     text-align: center;
-    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(45, 156, 219, 0.1) 0%, transparent 70%);
     position: relative;
     overflow: hidden;
 }
@@ -155,7 +155,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(45, 156, 219, 0.05) 0%, transparent 70%);
     animation: rotate 20s linear infinite;
 }
 
@@ -804,6 +804,7 @@ section {
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Selection */
