@@ -698,7 +698,8 @@ section {
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        min-width: 0;
     }
 
     .nav-toggle {
@@ -725,10 +726,10 @@ section {
     .header.header--compact .nav,
     .header.header--compact .nav-toggle { display: none !important; }
     .header.header--compact .header-content { justify-content: center; }
-    .header.header--compact .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; max-height: 40px; }
+    .header.header--compact .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; max-height: 40px; max-width: 100%; }
 
-    .telegram-bot { display: flex; align-items: center; }
-    .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; line-height: 1.2; white-space: nowrap; max-height: 40px; }
+    .telegram-bot { display: flex; align-items: center; flex: 1 1 auto; justify-content: flex-end; min-width: 0; }
+    .btn-telegram { padding: 10px 16px; font-size: 0.95rem; border-radius: 18px; line-height: 1.2; white-space: nowrap; max-height: 40px; max-width: 60vw; overflow: hidden; text-overflow: ellipsis; }
 
     /* iOS safe area support for header container */
     @supports (padding: env(safe-area-inset-top)) {
@@ -775,7 +776,9 @@ section {
 }
 
 @media (max-width: 480px) {
-    .btn-telegram { padding: 9px 14px; font-size: 0.9rem; border-radius: 16px; }
+    .header-content { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+    .telegram-bot { width: 100%; justify-content: center; }
+    .btn-telegram { width: 100%; max-width: none; padding: 9px 14px; font-size: 0.9rem; border-radius: 16px; }
     .hero {
         padding: 40px 0;
     }
